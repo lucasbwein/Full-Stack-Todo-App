@@ -6,14 +6,14 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, "client/build")));
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "client/build/index.html"));
-// });
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "build/index.html"));
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+// app.use(express.static(path.join(__dirname, "build")));
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "build/index.html"));
+// });
 
 const router = require("./routes");
 app.use("/api", router);
