@@ -21,7 +21,7 @@ router.get("/todos", async (req, res) => {
 //POST /todos
 router.post("/todos", async (req, res) => {
     const collection = await getCollection();
-    let { todo } = req.body;
+    let { todo, priority } = req.body;
 
     if (!todo) {
         return res.status(400).json({mssg: "error no todo found"});
@@ -29,9 +29,12 @@ router.post("/todos", async (req, res) => {
 
     todo = (typeof todo === "string") ? todo : JSON.stringify(todo); // makes it so true = "true" **** THIS IS IFFY
 
-    const newTodo = await collection.insertOne({todo, status: false});
+    const newTodo = await collection.insertOne({todo, status: false, priority: priority || "medium" });
 
-    res.status(201).json({ todo, status: false, _id: newTodo.insertedId });
+    res.status(201).json({ 
+        todo, status: false, 
+        priority: priority || "medium",
+        _id: newTodo.insertedId });
 });
 
 //DELETE /todos/:id
