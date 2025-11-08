@@ -325,5 +325,5 @@ body.light .priority--high   { background-color: rgba(231,76,60,0.25);  color:#b
       align-items: center;
       justify-content: center;
       gap: 1rem;
-    }
+  }
 }
