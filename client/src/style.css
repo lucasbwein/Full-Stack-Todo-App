@@ -292,11 +292,21 @@ body.light .priority--high   { background-color: rgba(231,76,60,0.25);  color:#b
 /* Mobile -- FIX THE WIDTH ISSUE: update new additions to fit */
 @media (max-width: 430px) {
     .title {
-        font-size: 1.6rem;
+      font-size: 1.6rem;
     }
 
     .form {
-        width: 70%;
+      flex-direction: column;
+      align-items: stretch;
+      width: 95%;
+    }
+    .form__input,
+    .form__button,
+    .form__select {
+      width: 100%;
+    }
+    .form__button {
+      margin-top: 0.5rem;
     }
 
     .todo {
