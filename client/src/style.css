@@ -289,7 +289,7 @@ body.light .priority--high   { background-color: rgba(231,76,60,0.25);  color:#b
 
 
 
-/* Mobile -- FIX THE WIDTH ISSUE: update new additions to fit */
+/* Mobile, maybe update new additions if desired  */
 @media (max-width: 430px) {
     .title {
       font-size: 1.6rem;
@@ -313,5 +313,17 @@ body.light .priority--high   { background-color: rgba(231,76,60,0.25);  color:#b
         width: 70%;
         font-size: 1.1rem;
     }
-  
+
+    .mutations {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .todo__right {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
 }
