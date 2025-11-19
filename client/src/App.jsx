@@ -48,7 +48,7 @@ export default function App() {
       const newTodo = await res.json();
 
       setContent("");
-      setTodos([...todos, { ...newTodo, priority }]);
+      setTodos([...todos, { newTodo, priority }]);
     }
   }
 
